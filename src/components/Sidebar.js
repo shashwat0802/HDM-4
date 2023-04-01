@@ -1,3 +1,5 @@
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 
@@ -12,46 +14,31 @@ export default function Sidebar() {
     <div className="container-fluid mt-3">
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-md">
         <div className="container-fluid p-2">
-          <Link to="#" className="navbar-brand text-primary mr-0">Company Logo</Link>
+          <Link to="#" className="navbar-brand text-primary mr-0">HDM-4 Thapar</Link>
           <div className="form-inline ml-auto">
             <div className="btn btn-primary" onClick={ToggleSidebar}>
-              <i className="fa fa-bars"></i>
+            <FontAwesomeIcon icon={faBars} className="text-white" />
             </div>
           </div>
         </div>
       </nav>
       <div className={`sidebar ${isOpen == true ? 'active' : ''}`}>
         <div className="sd-header">
-          <h4 className="mb-0">Sidebar Header</h4>
+          <h4 className="mb-0">Configurations</h4>
           <div className="btn btn-primary" onClick={ToggleSidebar}>
-            <i className="fa fa-times"></i>
+          <FontAwesomeIcon icon={faTimes} className="text-white" />
           </div>
         </div>
         <div className="sd-body">
           <ul>
             <li>
-              <Link to="#" className="sd-link">Menu Item 1</Link>
+              <Link to="#" className="sd-link">Climate Data</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Menu Item 2</Link>
+              <Link to="#" className="sd-link">Road Network</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Menu Item 3</Link>
-            </li>
-            <li>
-              <Link to="#" className="sd-link">Menu Item 4</Link>
-            </li>
-            <li>
-              <Link to="#" className="sd-link">Menu Item 5</Link>
-            </li>
-            <li>
-              <Link to="#" className="sd-link">Menu Item 6</Link>
-            </li>
-            <li>
-              <Link to="#" className="sd-link">Menu Item 7</Link>
-            </li>
-            <li>
-              <Link to="#" className="sd-link">Menu Item 8</Link>
+              <Link to="#" className="sd-link">Vehicle Fleet</Link>
             </li>
           </ul>
         </div>

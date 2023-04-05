@@ -35,10 +35,13 @@ export default function Sidebar() {
               <Link to="#" className="sd-link">Climate Data</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Road Network</Link>
+              <Link to="#" className="sd-link">Speed Flow Type</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Vehicle Fleet</Link>
+              <Link to="#" className="sd-link">Traffic Flow Pattern</Link>
+            </li>
+            <li>
+              <Link to="#" className="sd-link">Road Network</Link>
             </li>
           </ul>
         </div>

@@ -9,12 +9,12 @@ export default function Dashboard() {
     setTabs(number)
   }
   return (
-    <div>
+    <div style={{height:'90vh'}}>
         <Sidebar switchTabs={switchTabs}/>
         {tab === 0 && (
           <ClimateData/>
         )}
-        {tab == 1 && (
+        {tab === 1 && (
           <SpeedFlowType/>
         )}
     </div>

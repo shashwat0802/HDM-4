@@ -35,24 +35,28 @@ export default function Sidebar({switchTabs}) {
               <Link to="#" className="sd-link" onClick={(e) => {
                 e.preventDefault()
                 switchTabs(0)
+                ToggleSidebar()
               }}>Climate Data</Link>
             </li>
             <li>
               <Link to="#" className="sd-link" onClick={(e) => {
                 e.preventDefault()
                 switchTabs(1)
+                ToggleSidebar()
               }}>Speed Flow Type</Link>
             </li>
             <li>
               <Link to="#" className="sd-link" onClick={(e) => {
                 e.preventDefault()
                 switchTabs(2)
+                ToggleSidebar()
               }}>Traffic Flow Pattern</Link>
             </li>
             <li>
               <Link to="#" className="sd-link" onClick={(e) => {
                 e.preventDefault()
                 switchTabs(3)
+                ToggleSidebar()
               }}>Road Network</Link>
             </li>
           </ul>

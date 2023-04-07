@@ -80,3 +80,28 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
+/* Login CSS */
+.Login {
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./SVG/Dashboard\ Login.svg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .Login-btn {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .Login-input {
+    border: 1px;
+    border-color: #fff;
+    border-radius: 5px;
+  }

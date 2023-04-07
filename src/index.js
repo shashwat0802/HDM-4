@@ -4,6 +4,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
+import ClimateData from './components/ClimateData';
+import SpeedFlowType from './components/SpeedFlowType';
+import TrafficFlowPattern from './components/TrafficFlowPattern';
+import RoadNetwork from './pages/RoadNetwork';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +17,22 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <Dashboard/>,
+  },
+  {
+    path: 'climate-data',
+    element: <ClimateData/>,
+  },
+  {
+    path: 'speed-flow',
+    element: <SpeedFlowType/>,
+  },
+  {
+    path: 'traffic-flow',
+    element: <TrafficFlowPattern/>,
+  },
+  {
+    path: 'road-network',
+    element: <RoadNetwork/>,
   },
 ]);
 

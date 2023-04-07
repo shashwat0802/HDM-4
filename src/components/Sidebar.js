@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Sidebar({switchTabs}) {
+export default function Sidebar() {
   const [isOpen, setIsopen] = useState(false);
 
   const ToggleSidebar = () => {
@@ -32,32 +32,16 @@ export default function Sidebar({switchTabs}) {
         <div className="sd-body">
           <ul>
             <li>
-              <Link to="#" className="sd-link" onClick={(e) => {
-                e.preventDefault()
-                switchTabs(0)
-                ToggleSidebar()
-              }}>Climate Data</Link>
+              <Link to="/climate-data" className="sd-link" >Climate Data</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link" onClick={(e) => {
-                e.preventDefault()
-                switchTabs(1)
-                ToggleSidebar()
-              }}>Speed Flow Type</Link>
+              <Link to="/speed-flow" className="sd-link" >Speed Flow Type</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link" onClick={(e) => {
-                e.preventDefault()
-                switchTabs(2)
-                ToggleSidebar()
-              }}>Traffic Flow Pattern</Link>
+              <Link to="/traffic-flow" className="sd-link" >Traffic Flow Pattern</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link" onClick={(e) => {
-                e.preventDefault()
-                switchTabs(3)
-                ToggleSidebar()
-              }}>Road Network</Link>
+              <Link to="/road-network" className="sd-link" >Road Network</Link>
             </li>
           </ul>
         </div>

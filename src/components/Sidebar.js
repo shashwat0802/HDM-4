@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function Sidebar({switchTabs}) {
   const [isOpen, setIsopen] = useState(false);
 
   const ToggleSidebar = () => {
@@ -32,16 +32,28 @@ export default function Sidebar() {
         <div className="sd-body">
           <ul>
             <li>
-              <Link to="#" className="sd-link">Climate Data</Link>
+              <Link to="#" className="sd-link" onClick={(e) => {
+                e.preventDefault()
+                switchTabs(0)
+              }}>Climate Data</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Speed Flow Type</Link>
+              <Link to="#" className="sd-link" onClick={(e) => {
+                e.preventDefault()
+                switchTabs(1)
+              }}>Speed Flow Type</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Traffic Flow Pattern</Link>
+              <Link to="#" className="sd-link" onClick={(e) => {
+                e.preventDefault()
+                switchTabs(2)
+              }}>Traffic Flow Pattern</Link>
             </li>
             <li>
-              <Link to="#" className="sd-link">Road Network</Link>
+              <Link to="#" className="sd-link" onClick={(e) => {
+                e.preventDefault()
+                switchTabs(3)
+              }}>Road Network</Link>
             </li>
           </ul>
         </div>

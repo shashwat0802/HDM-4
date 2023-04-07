@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Sidebar from './Sidebar';
 
 function Speedflowtype() {
   const [username, setUsername] = useState('');
@@ -25,6 +26,7 @@ function Speedflowtype() {
   return (
     <>
       <div>
+        <Sidebar/>
         <form onSubmit={handleSubmit}>
           {/* name section */}
           <div>

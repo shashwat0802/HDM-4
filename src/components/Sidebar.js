@@ -14,7 +14,7 @@ export default function Sidebar() {
     <div className="container-fluid mt-3">
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-md">
         <div className="container-fluid p-2">
-          <Link to="#" className="navbar-brand text-primary mr-0">HDM-4 Thapar</Link>
+          <Link to="/dashboard" className="navbar-brand text-primary mr-0">HDM-4 Thapar</Link>
           <div className="form-inline ml-auto">
             <div className="btn btn-primary" onClick={ToggleSidebar}>
             <FontAwesomeIcon icon={faBars} className="text-white" />

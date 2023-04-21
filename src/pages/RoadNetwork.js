@@ -100,7 +100,7 @@ export default function RoadNetwork() {
           Add Road Network
         </button>
       </div>
-      <div className="" style={{ height: '100%' }}>
+      <div className="container" style={{ height: '100%' }}>
         {/* multi step form for road network */}
         <div className="row">
           <div className="col-md-12 col-md-offset-3">
@@ -113,13 +113,124 @@ export default function RoadNetwork() {
               </ul>
 
               <fieldset>
-                <h2 className="fs-title">Personal Details</h2>
+                {/* <h2 className="fs-title">Personal Details</h2>
                 <h3 className="fs-subtitle">
                   Tell us something more about you
-                </h3>
-                <input type="text" name="fname" placeholder="First Name" />
-                <input type="text" name="lname" placeholder="Last Name" />
-                <input type="text" name="phone" placeholder="Phone" />
+                </h3> */}
+                <table class="table table-hover table-bordered">
+                  <thead></thead>
+                  <tbody>
+                    <tr>
+                      <th>Section Name:</th>
+                      <td>
+                        <input type="text" name="sname" placeholder="" />
+                      </td>
+                      <th>Length</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> km
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Section ID:</th>
+                      <td>
+                        <input type="text" name="sid" placeholder=""  />
+                      </td>
+                      <th>Carriageway width</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> m
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Link Name:</th>
+                      <td>
+                        <input type="text" name="lname" placeholder="" />
+                      </td>
+                      <th>Shoulder width</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> m
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Link ID:</th>
+                      <td>
+                        <input type="text" name="lid" placeholder="" />
+                      </td>
+                      <th>No. of Lanes</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Speed Flow Type:</th>
+                      <td>
+                        <select name="sftype" id="sftype">
+                          <option value="">Two Lane Wide</option>
+                        </select>
+                      </td>
+                      <th colSpan='2'>Traffic Data:</th>
+                    </tr>
+                    <tr>
+                      <th>Traffic Flow Pattern:</th>
+                      <td>
+                        <select name="tfpattern" id="tfpattern">
+                          <option value="">Collector Street Flow</option>
+                        </select>
+                      </td>
+                      <th>Motorised</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> AADT 
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Climate Zone:</th>
+                      <td>
+                        <select name="czone" id="czone">
+                          <option value="">North India Plane</option>
+                        </select>
+                      </td>
+                      <th>NMT</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> AADT
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Road Class:</th>
+                      <td>
+                        <select name="rclass" id="rclass">
+                          <option value="">Secondary or main</option>
+                        </select>
+                      </td>
+                      <th>Year</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Surface Class:</th>
+                      <td>
+                        <select name="sclass" id="sclass">
+                          <option value="">Bituminous</option>
+                        </select>
+                      </td>
+                      <th>Flow Direction</th>
+                      <td>
+                        <select name="" id="">
+                          <option value="">Two-way</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Pavement Type:</th>
+                      <td>
+                        <select name="ptype" id="ptype">
+                          <option value="">
+                            Asphalt Mix on Asphalt Pavement
+                          </option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
                 <input
                   type="button"
                   name="next"
@@ -129,13 +240,48 @@ export default function RoadNetwork() {
                 />
               </fieldset>
               <fieldset>
-                <h2 className="fs-title">Social Profiles</h2>
+                {/* <h2 className="fs-title">Social Profiles</h2>
                 <h3 className="fs-subtitle">
                   Your presence on the social network
-                </h3>
-                <input type="text" name="twitter" placeholder="Twitter" />
-                <input type="text" name="facebook" placeholder="Facebook" />
-                <input type="text" name="gplus" placeholder="Google Plus" />
+                </h3> */}
+                <table class="table table-hover table-bordered ">
+                  <thead></thead>
+                  <tbody>
+                    <tr>
+                    <th>Rise + Fall:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> m/km
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Avg Horiz Curvature:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> deg/km
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Speed Limit:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> km/h
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Altitude:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> m
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Drain Type:</th>
+                      <td>
+                        <select name="" id="">
+                          <option value="">Surface Lined</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
                 <input
                   type="button"
                   name="previous"
@@ -152,15 +298,76 @@ export default function RoadNetwork() {
                 />
               </fieldset>
               <fieldset>
-                <h2 className="fs-title">Create your account before</h2>
-                <h3 className="fs-subtitle">Fill in your credentials</h3>
-                <input type="text" name="email" placeholder="Email" />
-                <input type="password" name="pass" placeholder="Password" />
-                <input
-                  type="password"
-                  name="cpass"
-                  placeholder="Confirm Password"
-                />
+              <table class="table table-hover table-bordered ">
+                  <thead></thead>
+                  <tbody>
+                    <tr>
+                      <th colSpan='2'>Surfacing Data:</th>
+                    </tr>
+                    <tr>
+                    <th>Material Type</th>
+                    <td>
+                        <select name="" id="">
+                          <option value="">Surface Lined</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Most recent surfacing thickness:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> mm
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Previous/Old surfacing thickness:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> mm
+                      </td>
+                    </tr>
+                    <tr>
+                      <th colSpan='2'>Previous works:</th>
+                    </tr>
+                    <tr>
+                    <th>Last construction or reconstruction:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> year
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Last rehabilitation (overlay):</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> year
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Last resurfacing (resealing):</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> year
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Last preventative treatment:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> year
+                      </td>
+                    </tr>
+                    <tr>
+                      <th colSpan='2'>Strength Data:</th>
+                    </tr>
+                    <tr>
+                    <th>Calculated wet season model parameter SNP:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>DEF:</th>
+                      <td className='d-flex align-items-center'>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> mm
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
                 <input
                   type="button"
                   name="previous"
@@ -177,15 +384,74 @@ export default function RoadNetwork() {
                 />
               </fieldset>
               <fieldset>
-                <h2 className="fs-title">Create your account</h2>
-                <h3 className="fs-subtitle">Fill in your credentials</h3>
-                <input type="text" name="email" placeholder="Email" />
-                <input type="password" name="pass" placeholder="Password" />
-                <input
-                  type="password"
-                  name="cpass"
-                  placeholder="Confirm Password"
-                />
+              <table class="table table-hover table-bordered ">
+                  <thead></thead>
+                  <tbody>
+                    <tr>
+                    <th>Condition at the end of the year</th>
+                    <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' />
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Roughness (IRI - m/km):</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Total Area of cracking %:</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Ravelled area %:</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>No. of Potholes (No/km):</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Edge break area (m^2/km):</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Mean rut depth (mm):</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Texture depth (mm):</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Skid resistance (SCRIM 50km/h):</th>
+                      <td>
+                        <input type="text" name="length" placeholder="" className='mx-2' /> 
+                      </td>
+                    </tr>
+                    <tr>
+                    <th>Drainage:</th>
+                      <td>
+                        <select name="" id="">
+                          <option value="">Good</option>
+                        </select>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
                 <input
                   type="button"
                   name="previous"

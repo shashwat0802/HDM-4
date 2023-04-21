@@ -163,3 +163,7 @@
   background: #2098ce;
   color: white;
 }
+
+.table th {
+  vertical-align: middle;
+}

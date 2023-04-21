@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 export default function RoadNetwork() {
   const [animating, setAnimating] = useState(false);
+  const [isRoadNetworkOpen, setIsRoadNetworkOpen] = useState(false);
 
   const handleNext = (event) => {
     event.preventDefault();
@@ -91,16 +92,23 @@ export default function RoadNetwork() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsRoadNetworkOpen(false)
   };
+
+  const handleRoadNetwork = () => {
+    setIsRoadNetworkOpen(true)
+  }
+  
   return (
     <div>
       <Sidebar />
       <div className="d-flex justify-content-end px-5">
-        <button type="button" className="btn btn-primary align-self-end my-4">
+        <button type="button" className="btn btn-primary align-self-end my-4" onClick={handleRoadNetwork}>
           Add Road Network
         </button>
       </div>
-      <div className="container" style={{ height: '100%' }}>
+      {isRoadNetworkOpen && (
+        <div className="container" style={{ height: '100%' }}>
         {/* multi step form for road network */}
         <div className="row">
           <div className="col-md-12 col-md-offset-3">
@@ -471,6 +479,7 @@ export default function RoadNetwork() {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

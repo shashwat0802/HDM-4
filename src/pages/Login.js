@@ -1,57 +1,85 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from "react";
+import { Container, Form, Button, Row, Col, Card } from "react-bootstrap";
 
-export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Samplelogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleUsernameChange = event => {
-    setUsername(event.target.value);
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
-  const handlePasswordChange = event => {
-    setPassword(event.target.value);
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    // Send login request to server here
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    // Handle sign in logic here
+  };
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    // Handle sign up logic here
+  };
+
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    // Handle forgot password logic here
   };
 
   return (
-    <div className="Login">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit} className="Login-form mt-4">
-        <input
-          type="text"
-          value={username}
-          onChange={handleUsernameChange}
-          placeholder="Enter Your Username"
-          className="mb-3 py-2 px-3 Login-input"
-        />
-
-        <br />
-
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Enter Your Password"
-          className="py-2 px-3  Login-input"
-        />
-
-        <br />
-        <Button
-          className="Login-btn mt-3 px-5"
-          variant="secondary"
-          size="lg"
-          onClick={() => {
-            window.location.pathname = '/dashboard';
-          }}
-        >
-          Login
-        </Button>
-      </form>
-    </div>
+    <Container>
+      <Row className="justify-content-center mt-5">
+        <Col xs={12} md={6} lg={4}>
+          <Card>
+            <Card.Body>
+              <h2 className="text-center mb-4">Log In</h2>
+              <Form onSubmit={handleSignIn}>
+                <Form.Group id="email">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group id="password">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                    required
+                  />
+                </Form.Group>
+                <Button
+                  className="w-100 mt-3"
+                  type="submit"
+                  onClick={() => {
+                    window.location.pathname = "/dashboard";
+                  }}>
+                  Log In
+                </Button>
+              </Form>
+              <div className="w-100 text-center mt-3">
+                <a href="#" onClick={handleForgotPassword}>
+                  Forgot Password?
+                </a>
+              </div>
+            </Card.Body>
+          </Card>
+          <div className="w-100 text-center mt-2">
+            Need an account?{" "}
+            <a href="#" onClick={handleSignUp}>
+              Sign Up
+            </a>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
-}
+};
+
+export default Samplelogin;

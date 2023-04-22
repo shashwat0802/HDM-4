@@ -1,172 +1,185 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Sidebar from './Sidebar';
+import { useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import Sidebar from "./Sidebar";
 
-function Speedflowtype() {
-  const [username, setUsername] = useState('');
-  const [selectedOption, setSelectedOption] = useState('');
+function Samplespeed() {
+  const [name, setName] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const [ultimateCapacity, setUltimateCapacity] = useState(600);
+  const [freeflow, setFreeflow] = useState(0);
+  const [nominalcapacity, setNominalCapacity] = useState(0.7);
+  const [JamSpeed, setJamSpeed] = useState(10);
 
-  const handleOptionChange = event => {
-    setSelectedOption(event.target.value);
-  };
-  const handleUsernameChange = event => {
-    setUsername(event.target.value);
-  };
-
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    // Send login request to server here
+    console.log("Submitted!", name, selectedOption, ultimateCapacity);
+  };
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleDropdownChange = (event) => {
+    setSelectedOption(event.target.value);
+
+    // Update ultimate capacity based on selected option
+    switch (event.target.value) {
+      case "Single Lane Road":
+        setUltimateCapacity(600);
+        setFreeflow(0);
+        setNominalCapacity(0.7);
+        setJamSpeed(10);
+        break;
+      case "Two Lane Road":
+        setUltimateCapacity(1400);
+        setFreeflow(0.1);
+        setNominalCapacity(0.9);
+        setJamSpeed(25);
+        break;
+      case "Four Lane Road":
+        setUltimateCapacity(2000);
+        setFreeflow(0.4);
+        setNominalCapacity(0.95);
+        setJamSpeed(40);
+        break;
+      case "Intermediate Road":
+        setUltimateCapacity(1200);
+        setFreeflow(0);
+        setNominalCapacity(0.7);
+        setJamSpeed(20);
+        break;
+      default:
+        setSelectedOption("Single Lane Road");
+        setUltimateCapacity(600);
+        setFreeflow(0);
+        setNominalCapacity(0.7);
+        setJamSpeed(10);
+        break;
+    }
+  };
+
+  const handleDefaultsClick = () => {
+    setName("");
+    setSelectedOption("Single Lane Road");
+    setUltimateCapacity(600);
+    setFreeflow(0);
+    setNominalCapacity(0.7);
+    setJamSpeed(10);
+  };
+
+  const handleCancelClick = () => {
+    setName("");
+    setSelectedOption("Single Lane Road");
+    setUltimateCapacity(600);
+    setFreeflow(0);
+    setNominalCapacity(0.7);
+    setJamSpeed(10);
   };
 
   return (
     <>
-      <div className="Speedflowtype-main mt-3">
-      <Sidebar/>
-        <form onSubmit={handleSubmit} >
-          {/* name section */}
-          <div>
-            <label>
-              Name :
-              <input
-                className="mx-2 my-1 "
-                type="text"
-                value={username}
-                onChange={handleUsernameChange}
-                placeholder="Enter your name"
-              />
-            </label>
-          </div>
-          {/* Capacity Section */}
-          <div>
+      <Sidebar />
+      <div className="form-container mt-3">
+        {" "}
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="formName">
+            <h5>Name</h5>
+            <Form.Control
+              type="text"
+              placeholder="Enter name"
+              value={name}
+              onChange={handleNameChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formDropdown">
             <h5>Capacity</h5>
-            {/* Road type Drop down */}
-            <label>
-              Select an option:
-              <select
-                value={selectedOption}
-                onChange={handleOptionChange}
-                className="mx-2 my-1"
-              >
-                <option value="">Road type</option>
-                <option value="option1">Two Lane Road</option>
-                <option value="option2">Single Lane Road</option>
-                <option value="option2">Four Lane Road</option>
-                <option value="option3">Intermediate Road</option>
-                <option value="option2">Other Configuration</option>
-              </select>
-            </label>
-            {/* Road type Drop Down */}
-            <br />
-            <label>
-              Ultimate Capacity:
-              <input
-                type="text"
-                placeholder="Enter Your Data"
-                className="mx-2 my-1"
-              />
-            </label>
-            <br />
-            <label>
-              Free Flow:
-              <input
-                type="text"
-                placeholder="Enter Your Data"
-                className="mx-2 my-1"
-              />
-            </label>
-            <br />
-            <label>
-              Nominal Capacity:
-              <input
-                type="text"
-                placeholder="Enter Your Data"
-                className="mx-2 my-1"
-              />
-            </label>
-            <br />
-            <label>
-              Jam Speed at Capacity :
-              <input
-                type="text"
-                placeholder="Enter Your Data"
-                className="mx-2 my-1"
-              />
-            </label>
-            <br />
-          </div>
-          {/* capacity section ends */}
+            <Form.Label>Dropdown</Form.Label>
+            <Form.Control
+              as="select"
+              value={selectedOption}
+              onChange={handleDropdownChange}>
+              <option>Single Lane Road</option>
+              <option>Two Lane Road</option>
+              <option>Four Lane Road</option>
+              <option>Intermediate Road</option>
+            </Form.Control>
+          </Form.Group>
+          {/* Ultimate Capacity */}
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>Ultimate Capacity</Form.Label>
+            <Form.Control type="number" value={ultimateCapacity} readOnly />
+          </Form.Group>
+          {/* freeflow */}
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>Free-flow</Form.Label>
+            <Form.Control type="number" value={freeflow} readOnly />
+          </Form.Group>
+          {/* Nominal Capacity */}
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>Nominal Capacity</Form.Label>
+            <Form.Control type="number" value={nominalcapacity} readOnly />
+          </Form.Group>
+          {/* JamSpeed at capacity */}
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>JamSpeed at capacity (km/h)</Form.Label>
+            <Form.Control type="number" value={JamSpeed} readOnly />
+          </Form.Group>
+
+          {/* Section-2 */}
           {/* Accident Rates */}
-
-          <div>
+          <Form.Group controlId="formUltimateCapacity">
             <h5>Accident Rates(in number per 100 million veh-km)</h5>
-            <label>
-              By Component :
-              <br />
-              <label>
-                Fatal:
-                <input type="text" value={0} className="mx-2 my-1" />
-              </label>
-              <br />
-              <label>
-                Injury:
-                <input type="text" value={0} className="mx-2 my-1" />
-              </label>
-              <br />
-              <label>
-                Damage Only :
-                <input type="text" value={0} className="mx-2 my-1" />
-              </label>
-            </label>
-          </div>
-          {/* Speeed Related */}
-          <div>
-            <h5>Speed Related</h5>
-            <label>
-              maxr:
-              <input type="text" value={0.65} className="mx-2 my-1" />
-            </label>
-            <br />
-            <label>
-              CALBFAC
-              <input type="text" value={1} className="mx-2 my-1" />
-            </label>
-            <br />
-            <label>
-              Desired Speed Multiplication Factor
-              <input type="text" value={1} className="mx-2 my-1" />
-            </label>
-          </div>
+            <Form.Label> Fatal</Form.Label>
+            <Form.Control type="number" value={0} readOnly />
+          </Form.Group>
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>Injury</Form.Label>
+            <Form.Control type="number" value={0} readOnly />
+          </Form.Group>
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>Damage-only</Form.Label>
+            <Form.Control type="number" value={0} readOnly />
+          </Form.Group>
 
-          <br />
-          <Button
-            className="mt-2 mb-2"
-            onClick={() => {
-              window.location.pathname = '/dashboard';
-            }}
-          >
+          {/* Section-3 */}
+          {/* Speed Related */}
+          <Form.Group controlId="formUltimateCapacity">
+            <h5>Speed-Related</h5>
+            <Form.Label> maxr(m/sq.sec)</Form.Label>
+            <Form.Control type="number" value={0.6} readOnly />
+          </Form.Group>
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label>CALBFAC</Form.Label>
+            <Form.Control type="number" value={1} readOnly />
+          </Form.Group>
+          <Form.Group controlId="formUltimateCapacity">
+            <Form.Label> Desired Speed Multiplication Factor</Form.Label>
+            <Form.Control type="number" value={1} readOnly />
+          </Form.Group>
+
+          {/* Buttons */}
+          <Button variant="primary" type="submit" className="mt-2 px-4 mb-2">
             OK
           </Button>
-          <br />
+
           <Button
-            className="mb-2"
-            onClick={() => {
-              window.location.pathname = '/dashboard';
-            }}
-          >
-            Cancel
-          </Button>
-          <br />
-          <Button
-            onClick={() => {
-              window.location.pathname = '/dashboard';
-            }}
-          >
+            variant="secondary"
+            onClick={handleDefaultsClick}
+            className="mt-2 mx-2 mb-2">
             Defaults
           </Button>
-        </form>
+
+          <Button
+            variant="danger"
+            onClick={handleCancelClick}
+            className="mt-2 mb-2 ">
+            Cancel
+          </Button>
+        </Form>
       </div>
     </>
   );
 }
 
-export default Speedflowtype;
+export default Samplespeed;

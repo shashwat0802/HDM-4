@@ -81,45 +81,21 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
-/* Login CSS */
-/* .Login {
-  font-size: 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url(./SVG/Dashboard\ Login.svg);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-.Login-btn {
-  display: block;
-  margin: 0 auto;
-}
-
-.Login-input {
-  border: 1px;
-  border-color: #fff;
-  border-radius: 5px;
-} */
-.Speedflowtype-main {
-  font-size: 1.3em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 .form-container {
   width: 50%;
   margin: 0 auto;
+}
+
+.my-table {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.my-table th {
+  background-color: #f2f2f2;
+}
+
+.my-table td {
+  border: 1px solid #ddd;
 }

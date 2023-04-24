@@ -7,7 +7,7 @@ import ClimateData from "./components/ClimateData";
 import TrafficFlowPattern from "./pages/TrafficFlowPattern";
 import RoadNetwork from "./pages/RoadNetwork";
 import Login from "./pages/Login";
-import SpeedFlowtype from "./components/SpeedFlowtype";
+import SpeedFlowType from "./components/SpeedFlowType";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "speed-flow",
-    element: <SpeedFlowtype />,
+    element: <SpeedFlowType />,
   },
   {
     path: "traffic-flow",
